@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Demo</string>
+    <string name="networking_error">Network issue</string>
+    <string name="name"><b>Name:</b> %s</string>
+    <string name="uid">Uid: %s</string>
+    <string name="price">Price: %s</string>
+</resources>

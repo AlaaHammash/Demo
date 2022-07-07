@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    >
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="model"
+            type="com.org.demo.model.models.EquipmentModel" />
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/equipment_Lay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/cardview_default_radius"
+        android:layout_margin="@dimen/small_lr_margings"
+        android:padding="@dimen/small_lr_margings">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/parentRl"
+            android:background="@color/grey"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="@dimen/small_lr_margings"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageView
+            android:id="@+id/thumbnailIv"
+            style="@style/ImageTitleBar_36"
+            app:image="@{model.image_urls_thumbnails[0]}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+
+        <TextView
+            android:id="@+id/nameTv"
+            style="@style/NormalTextView"
+            android:layout_marginTop="6dp"
+            android:textStyle="bold"
+            android:text="@{@string/name(model.name)}"
+            android:layout_marginEnd="12dp"
+            app:layout_constraintStart_toEndOf="@id/thumbnailIv"
+            app:layout_constraintTop_toTopOf="@id/thumbnailIv" />
+
+            <TextView
+                android:id="@+id/uidTv"
+                style="@style/NormalTextView"
+                android:layout_marginTop="6dp"
+                android:maxLines="2"
+                android:visibility="gone"
+                android:text="@{@string/uid(model.uid)}"
+                app:layout_constraintStart_toStartOf="parent"
+
+                app:layout_constraintTop_toBottomOf="@+id/thumbnailIv"/>
+
+
+            <TextView
+            android:id="@+id/priceTv"
+            style="@style/NormalTextView"
+            android:layout_marginTop="6dp"
+                android:text="@{@string/price(model.price)}"
+                app:layout_constraintStart_toEndOf="@id/thumbnailIv"
+             app:layout_constraintTop_toBottomOf="@+id/nameTv"/>
+
+              </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</layout>
